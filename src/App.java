@@ -74,6 +74,17 @@ public class App {
         callTable[callCounter][4] = desc;
         callTable[callCounter][5] = teamUnit;
     };
+
+    // method to read cvs data
+
+    public static void readData() {
+        
+    }
+
+   
+
+
+
     // main method
     public static void main(String[] args) {
         try {
@@ -84,9 +95,10 @@ public class App {
             System.out.println("---- EMERGENCY CALL HANDLING ---- \n");
             System.out.println("This is an emergency call handling system. You will be asked a series of questions to log incidents to send out emergency teams. You are only able to log 20 calls. ");
             System.out.println(hashes);
+            Scanner sc = new Scanner(System.in);
             // user input:
             while (doContinue && callCounter <= 19 ) {
-                final Scanner sc = new Scanner(System.in);
+                
                 System.out.println("\nPlease enter the date of incident: ");
                 String date = sc.nextLine();
                 System.out.println(hashes+"\nPlease enter the time of incident: ");
@@ -109,7 +121,7 @@ public class App {
                     System.out.println(hashes+"\nPlease describe the incident (max 256 chars): ");
                     desc = sc.nextLine();
                 };
-                System.out.println(hashes+"\nPlease select the following number to assign a response unit to the incident:" +
+                System.out.println(hashes+"\nPlease type and enter the corresponding number to assign a response unit to the incident:" +
                     "\nRoad Traffic Collision Investigation Unit:"+
                     "\n\tArmed Response Unit -- 1"+
                     "\n\tSpeeding -- 2"+"\n\tDrunk/drug driving -- 3"+"\n\tRoad Closures -- 4"+
@@ -126,20 +138,20 @@ public class App {
                 callCounter++;
                 // menu for users to proceed or save where they are
                 if (callsLeft != 0) {
-                    System.out.println("Do you wish to add another call? Select the following numbers for your response: \nYES -- 1 \nNO -- 2" );
+                    System.out.println("Do you wish to add another call? Type and enter the following numbers for your response: \nYES -- 1 \nNO -- 2" );
                     int continueStatus = sc.nextInt();
                     if (continueStatus == 2) {
                         doContinue = false;
                     };
                 } else {
-                    System.out.println("All 20 calls have been added to the table. A CVS file will now be produced.");
+                    System.out.println("All 20 calls have been saved. A CVS file will now be produced.");
                 }
             }
-            System.out.println("All calls have been added to table.");
+            System.out.println("All calls have been saved.");
             // displays the 2d array
-            for (int i = 0; i < callTable.length; i++) {
-                System.out.println(Arrays.toString(callTable[i]));
-            };
+            // for (int i = 0; i < callTable.length; i++) {
+            //     System.out.println(Arrays.toString(callTable[i]));
+            // };
             // iterates over 2d array and adds rows to file
             for (int i = 0; i < callTable.length; i++) {
                 // not a particularly robust method of weeding out the nulls:
@@ -149,9 +161,33 @@ public class App {
                     file.write(row);
                 }
             }
-            // closes file
             file.close();
-            System.out.println("Table has been outputted to a CVS file.");
+            // System.out.println("Your calls have been saved to a CSV file.\nDo you wish to view these calls? Type and enter the following numbers for your response:\nYES -- 1 \nNO -- 2");
+            // int yesFile = sc.nextInt();
+            sc.close();
+           
+
+
+
+            // reads data frome file:
+            ArrayList<ArrayList<String>> calls = new ArrayList<ArrayList<String>>();
+            int counterRowCounter = 0;
+            File newfile = new File("file.csv");
+            Scanner inputFile = new Scanner(newfile);
+            while (inputFile.hasNextLine()) {
+                String line = inputFile.nextLine();
+                String values[] = line.split(",");
+                calls.add(new ArrayList<String>(Arrays.asList(values)));
+                counterRowCounter++;
+            };
+            inputFile.close();
+            System.out.println(calls);
+            // closes file
+            
+            
+
+            
+            
         }
         // handles user inputting wrong data type, eg continueStatus question
         catch (InputMismatchException e) {
