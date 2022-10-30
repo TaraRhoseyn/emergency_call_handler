@@ -117,7 +117,7 @@ public class App {
                     "\nRoad Traffic Collision Investigation Unit:"+
                     "\n\tSpeeding -- 2"+"\n\tDrunk/drug driving -- 3"+"\n\tRoad Closures -- 4"+
                     "\n\tRoad Traffic Collision -- 5"+"\nCriminal Investigation Department:"+
-                    "\n\tTheft -- 6"+"\n\tPersonal Injury(Assault) -- 7"+"\n\t Murder Investigation Team -- 8");
+                    "\n\tTheft -- 6"+"\n\tPersonal Injury(Assault) -- 7"+"\n\tMurder Investigation Team -- 8");
                 int unitSelector = sc.nextInt();
                 String teamUnit = findUnitTeam(unitSelector);
                 sc.nextLine();
