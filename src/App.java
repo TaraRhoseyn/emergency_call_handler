@@ -162,29 +162,24 @@ public class App {
                 }
             }
             file.close();
-            // System.out.println("Your calls have been saved to a CSV file.\nDo you wish to view these calls? Type and enter the following numbers for your response:\nYES -- 1 \nNO -- 2");
-            // int yesFile = sc.nextInt();
+            System.out.println(hashes+"\nYour calls have been saved to a CSV file.\nDo you wish to view these calls? Type and enter the following numbers for your response:\nYES -- 1 \nNO -- 2");
+            int yesFile = sc.nextInt();
+            if (yesFile == 1) {
+                ArrayList<ArrayList<String>> calls = new ArrayList<ArrayList<String>>();
+                int counterRowCounter = 0;
+                File newfile = new File("file.csv");
+                Scanner inputFile = new Scanner(newfile);
+                while (inputFile.hasNextLine()) {
+                    String line = inputFile.nextLine();
+                    String values[] = line.split(",");
+                    calls.add(new ArrayList<String>(Arrays.asList(values)));
+                    counterRowCounter++;
+                };
+                inputFile.close();
+                System.out.println(calls);
+            }
             sc.close();
            
-
-
-
-            // reads data frome file:
-            ArrayList<ArrayList<String>> calls = new ArrayList<ArrayList<String>>();
-            int counterRowCounter = 0;
-            File newfile = new File("file.csv");
-            Scanner inputFile = new Scanner(newfile);
-            while (inputFile.hasNextLine()) {
-                String line = inputFile.nextLine();
-                String values[] = line.split(",");
-                calls.add(new ArrayList<String>(Arrays.asList(values)));
-                counterRowCounter++;
-            };
-            inputFile.close();
-            System.out.println(calls);
-            // closes file
-            
-            
 
             
             
