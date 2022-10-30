@@ -1,19 +1,33 @@
-## Getting Started
+## Emergency Call Handler
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+This code is purely for educational purposes. It's a solution to a university problem.
 
-## Folder Structure
 
-The workspace contains two folders by default, where:
+The local Emergency call handling for the police, receives thousands of calls every day. Every call is logged, together with the response. Create a Java program to process these calls directing them to the appropriate response unit. You can assume that while the call is ongoing it remains in memory, to monitor the progress so, you should allow for 20 calls in memory at any one time. The response units available are as follows:
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+1. ARU – Armed Response Unit
+2. RTC (Road Traffic Collision) Investigation Unit
+    1. Traffic Response
+    a. Speeding
+    b. Drunk / drug driving
+    c. Road Closures
+    d. RTC
+3. CID (Criminal Investigation Department) for:
+a. Theft
+b. Personal Injury (Assault)
+c. MIT Murder Investigation Team
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+Your program should create a facility to store call details:
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+1. Date and time of call
+2. Nature of call:
+a. RTC
+b. Assault
+c. Murder
+d. Brandishing a weapon
+e. Theft/Burglary/Criminal damage
+3. Response unit assigned
+4. Location of Incident
+5. Description of incident (max 256ch)
 
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
-"# emergencyCallHandler" 
+At the end of the shift all call incidents are stored on a csv file, which when officers investigating an incident would like to view, they can be quickly retrieved and displayed.
