@@ -167,7 +167,11 @@ public class App {
                     counterRowCounter++;
                 };
                 inputFile.close();
-                System.out.println(calls);
+                System.out.println(hashes);
+                Iterator itr = calls.iterator();
+                while (itr.hasNext()) {
+                    System.out.println(itr.next());
+                }
             }
             sc.close();
         }
