@@ -38,24 +38,26 @@ public class App {
     public static String findUnitTeam(int s) {
         switch(s) {
             case 1:
+                unitTeam = "Armed Response Unit";
+            case 2:
                 unitTeam = "Traffic Response";
                 break;
-            case 2:
+            case 3:
                 unitTeam = "Drunk/drug driving";
                 break;
-            case 3:
+            case 4:
                 unitTeam = "Road Closures";
                 break;
-            case 4:
+            case 5:
                 unitTeam = "Road Traffic Collision";
                 break;
-            case 5:
+            case 6:
                 unitTeam = "Theft";
                 break;
-            case 6:
+            case 7:
                 unitTeam = "Personal Injury (Assault)";
                 break;
-            case 7:
+            case 8:
                 unitTeam = "MIT Murder Investigation Team";
                 break;
             default:
@@ -109,9 +111,10 @@ public class App {
                 };
                 System.out.println(hashes+"\nPlease select the following number to assign a response unit to the incident:" +
                     "\nRoad Traffic Collision Investigation Unit:"+
-                    "\n\tSpeeding -- 1"+"\n\tDrunk/drug driving -- 2"+"\n\tRoad Closures -- 3"+
-                    "\n\tRoad Traffic Collision -- 4"+"\nCriminal Investigation Department:"+
-                    "\n\tTheft -- 5"+"\n\tPersonal Injury(Assault) -- 6"+"\n\t Murder Investigation Team -- 7");
+                    "\n\tArmed Response Unit -- 1"+
+                    "\n\tSpeeding -- 2"+"\n\tDrunk/drug driving -- 3"+"\n\tRoad Closures -- 4"+
+                    "\n\tRoad Traffic Collision -- 5"+"\nCriminal Investigation Department:"+
+                    "\n\tTheft -- 6"+"\n\tPersonal Injury(Assault) -- 7"+"\n\t Murder Investigation Team -- 8");
                 int unitSelector = sc.nextInt();
                 String teamUnit = findUnitTeam(unitSelector);
                 sc.nextLine();
