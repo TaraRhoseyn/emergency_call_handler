@@ -122,8 +122,8 @@ public class App {
                     desc = sc.nextLine();
                 };
                 System.out.println(hashes+"\nPlease type and enter the corresponding number to assign a response unit to the incident:" +
+                    "\nArmed Response Unit -- 1"+
                     "\nRoad Traffic Collision Investigation Unit:"+
-                    "\n\tArmed Response Unit -- 1"+
                     "\n\tSpeeding -- 2"+"\n\tDrunk/drug driving -- 3"+"\n\tRoad Closures -- 4"+
                     "\n\tRoad Traffic Collision -- 5"+"\nCriminal Investigation Department:"+
                     "\n\tTheft -- 6"+"\n\tPersonal Injury(Assault) -- 7"+"\n\t Murder Investigation Team -- 8");
