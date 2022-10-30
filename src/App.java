@@ -74,17 +74,6 @@ public class App {
         callTable[callCounter][4] = desc;
         callTable[callCounter][5] = teamUnit;
     };
-
-    // method to read cvs data
-
-    public static void readData() {
-        
-    }
-
-   
-
-
-
     // main method
     public static void main(String[] args) {
         try {
@@ -98,7 +87,9 @@ public class App {
             Scanner sc = new Scanner(System.in);
             // user input:
             while (doContinue && callCounter <= 19 ) {
-                
+                if (callCounter >= 1) {
+                    sc.nextLine();
+                }
                 System.out.println("\nPlease enter the date of incident: ");
                 String date = sc.nextLine();
                 System.out.println(hashes+"\nPlease enter the time of incident: ");
@@ -179,10 +170,6 @@ public class App {
                 System.out.println(calls);
             }
             sc.close();
-           
-
-            
-            
         }
         // handles user inputting wrong data type, eg continueStatus question
         catch (InputMismatchException e) {
