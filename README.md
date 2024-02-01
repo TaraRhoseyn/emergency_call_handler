@@ -1,9 +1,8 @@
-## Emergency Call Handler
+## Java Assignment (Emergency Call Handler)
 
-This code is purely for educational purposes. It's a solution to a university problem.
+## What is it?
 
-
-The local Emergency call handling for the police, receives thousands of calls every day. Every call is logged, together with the response. Create a Java program to process these calls directing them to the appropriate response unit. You can assume that while the call is ongoing it remains in memory, to monitor the progress so, you should allow for 20 calls in memory at any one time. The response units available are as follows:
+The local Emergency call handling for the police receives thousands of calls every day. Every call is logged, together with the response. Create a Java program to process these calls directing them to the appropriate response unit. You can assume that while the call is ongoing it remains in memory, to monitor the progress so, you should allow for 20 calls in memory at any one time. The response units available are as follows:
 
 1. ARU – Armed Response Unit
 2. RTC (Road Traffic Collision) Investigation Unit
@@ -31,3 +30,7 @@ e. Theft/Burglary/Criminal damage
 5. Description of incident (max 256ch)
 
 At the end of the shift all call incidents are stored on a csv file, which when officers investigating an incident would like to view, they can be quickly retrieved and displayed.
+
+## What grade did I get?
+
+N/A - wasn't graded.
